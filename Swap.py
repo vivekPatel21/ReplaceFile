@@ -48,7 +48,7 @@ def replace_claw_image(github_url, target_path, new_description):
         print(f"An error occurred: {e}")
 
 # Example usage 
-github_image_url = "https://raw.githubusercontent.com/your-repo-path/claw.png"
+github_image_url = "https://github.com/vivekPatel21/ReplaceFile/blob/main/test.png"
 target_directory = r"Hollow Knight\hollow_knight_Data\Managed\Mods\Custom Knight\Skins\Default\Inventory"
 new_item_description = "This claw is custom-made for precision and style."
 
