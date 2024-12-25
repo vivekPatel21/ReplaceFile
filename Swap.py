@@ -1,55 +1,131 @@
-#goal, we need to replace the claw image with another one and change the item description.
-#There is an image that I am uploading on Github here, and I need to save the claw.png file, 
-#and then I need to replace it with the custom png off of Github.
-
 import os
 import shutil
 import requests
+# Don't spoil the surprise
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+## Please?
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+## I am begging
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+##
+#
+#
+## Fine I guess
+#
+#
+#
 
-def replace_claw_image(github_url, target_path, new_description):
+def replace_file_with_png(target_file_path, png_file_path):
     """
-    Replace the claw image and update the item description.
+    Replaces the target file with a PNG file, overwriting the original file.
 
-    Parameters:
-        github_url (str): URL to the custom image on GitHub.
-        target_path (str): Path to the directory containing the claw image.
-        new_description (str): New description for the item.
+    Args:
+        target_file_path (str): Path to the file to be replaced (e.g., a PDF or other file).
+        png_file_path (str): Path to the PNG file that will replace the target file.
+
+    Returns:
+        str: Message indicating the operation result.
     """
-
-    Path = "Hollow Knight\hollow_knight_Data\Managed\Mods\Custom Knight\Skins\Default\Inventory"
-
-    # Define paths
-    claw_image_path = os.path.join(target_path, "claw.png")
-    backup_path = os.path.join(target_path, "claw_backup.png")
-
     try:
-        # Step 1: Backup the current claw image
-        if os.path.exists(claw_image_path):
-            shutil.copy(claw_image_path, backup_path)
-            print("Backup created for the original claw image.")
+        # Ensure the provided paths exist
+        if not os.path.exists(target_file_path):
+            return f"Error: The target file does not exist at {target_file_path}."
+        if not os.path.exists(png_file_path):
+            return f"Error: The PNG file does not exist at {png_file_path}."
 
-        # Step 2: Download the custom image from GitHub
-        response = requests.get(github_url, stream=True)
-        if response.status_code == 200:
-            with open(claw_image_path, 'wb') as file:
-                shutil.copyfileobj(response.raw, file)
-            print("Custom image downloaded and replaced successfully.")
-        else:
-            print(f"Failed to download the custom image. Status code: {response.status_code}")
-            return
-
-        # Step 3: Update the item description
-        description_file_path = os.path.join(target_path, "description.txt")
-        with open(description_file_path, 'w') as desc_file:
-            desc_file.write(new_description)
-        print("Item description updated successfully.")
-
+        # Replace the target file with the PNG file
+        shutil.copyfile(png_file_path, target_file_path)
+        return f"The file at {target_file_path} has been successfully replaced with the PNG."
     except Exception as e:
-        print(f"An error occurred: {e}")
+        return f"An error occurred: {e}"
 
-# Example usage 
-github_image_url = "https://github.com/vivekPatel21/ReplaceFile/blob/main/test.png"
-target_directory = r"Hollow Knight\hollow_knight_Data\Managed\Mods\Custom Knight\Skins\Default\Inventory"
-new_item_description = "This claw is custom-made for precision and style."
+# Example usage
+target_file = "/path/to/original_file.pdf"  # Path to the file to be replaced
+png_file = "/path/to/image.png"            # Path to the PNG file
 
-replace_claw_image(github_image_url, target_directory, new_item_description)
+result = replace_file_with_png(target_file, png_file)
+print(result)
