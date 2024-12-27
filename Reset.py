@@ -4,7 +4,6 @@ import shutil
 #This entire file will reset the state of the changed item, when you run it.
 #The maze keeps a copy of the changed item.
 
-#F5 -> F22 -> F333
 #We get rid of the old image, and replace it with the original.
 def repair(file_Path, image_path):
     try:
