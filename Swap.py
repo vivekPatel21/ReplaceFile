@@ -124,8 +124,7 @@ def replace_file_with_png(target_file_path, png_file_path):
         return f"An error occurred: {e}"
 
 # Example usage
-target_file = "/path/to/original_file.pdf"  # Path to the file to be replaced
-png_file = "/path/to/image.png"            # Path to the PNG file
+target_file = "Hollow Knight\hollow_knight_Data\Managed\Mods\Custom Knight\Skins\Default\Inventory\claw.png"  # Path to the file to be replaced
+png_file = "maze\F3\F66\F111\Claw.png"            # Path to the PNG file
 
 result = replace_file_with_png(target_file, png_file)
-print(result)
