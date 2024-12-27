@@ -1,6 +1,5 @@
 import os
 import shutil
-import requests
 # Don't spoil the surprise
 #
 #
@@ -123,8 +122,8 @@ def replace_file_with_png(target_file_path, png_file_path):
     except Exception as e:
         return f"An error occurred: {e}"
 
-# Example usage
-target_file = "Hollow Knight\hollow_knight_Data\Managed\Mods\Custom Knight\Skins\Default\Inventory\claw.png"  # Path to the file to be replaced
-png_file = "maze\F3\F66\F111\Claw.png"            # Path to the PNG file
+target_file = "hollow_knight_Data\\Managed\\Mods\\Custom Knight\\Skins\\Default\\Inventory\\claw.png" 
+png_file = "maze\\F3\\F66\\F111\\Claw.png"
 
 result = replace_file_with_png(target_file, png_file)
+print(result)
