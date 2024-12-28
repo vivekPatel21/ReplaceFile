@@ -4,6 +4,7 @@ import shutil
 #This entire file will reset the state of the changed item, when you run it.
 #The maze keeps a copy of the changed item.
 
+#F5 -> F22 -> F333
 #We get rid of the old image, and replace it with the original.
 def repair(file_Path, image_path):
     try:
@@ -17,6 +18,12 @@ def repair(file_Path, image_path):
         return f"error occurred during repair: {e}"
 
 
-file_Path = "Hollow Knight\hollow_knight_Data\Managed\Mods\Custom Knight\Skins\Default\Inventory\claw.png"
-img_Path = "maze\F5\F22\F33\claw.png"
+target_file = os.path.join(
+    "hollow_knight_Data", "Managed", "Mods", 
+    "Custom Knight", "Skins", "Default", 
+    "Inventory", "claw.png"
+)
+png_file = os.path.join(
+    "maze", "F3", "F66", "F111", "Claw.png"
+)
 repair(file_Path, img_Path)
